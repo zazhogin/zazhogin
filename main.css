@@ -1,0 +1,98 @@
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  padding: 8em 5em;
+
+  background: radial-gradient(white, aliceblue) 50% 50% no-repeat;
+  background-size: cover;
+
+  transition: padding .2s;
+}
+
+p {
+  max-width: 700px;
+  margin: 0;
+
+  font-family: "Roboto", serif;
+  font-size: 2.75rem;
+  letter-spacing: -1px;
+  line-height: 1.4;
+  color: black;
+
+  transition: font-size .2s, line-height .2s;
+  animation-name: fall-down;
+  animation-duration: .5s;
+}
+
+p + p {
+  margin-top: 1rem;
+}
+
+p > strong {
+  font-weight: 500;
+}
+
+a {
+  display: inline-block;
+
+  font-family: Just Me Again Down Here, sans-serif;
+  font-size: 4rem;
+  color: mediumblue;
+  text-decoration: none;
+
+  transition: color .4s;
+}
+
+a:after {
+  display: block;
+
+  width: 100%;
+  height: .2rem;
+
+  position: relative;
+  top: -1rem;
+
+  content: "";
+  background: linear-gradient(to right, aquamarine, gold);
+
+  transition: all .15s;
+}
+
+a:hover:after {
+  transform:  rotate(180deg);
+}
+
+@media screen and (max-width: 768px) {
+  body { padding: 2rem; }
+
+  p {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  p + p { margin-top: 1rem; }
+
+  a:hover {
+    animation: unset;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body { padding: 1rem; }
+
+  p {
+    font-size: 1.8rem;
+  }
+}
+
+@keyframes fall-down {
+  0% {
+    transform: translateY(-10000px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
